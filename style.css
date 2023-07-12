@@ -10,6 +10,9 @@ body {font-family: "komet-sc", sans-serif;
 }
 
 a:visited { text-decoration: none; color:black}
+a {
+  text-decoration: none;
+}
 
 
 

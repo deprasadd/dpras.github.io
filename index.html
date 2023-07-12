@@ -1,45 +1,51 @@
 <!DOCTYPE html>
-
 <html>
-    <head>
-        <link rel = "stylesheet" href="style.css">
+<head>
+    <link rel = "stylesheet" href="style.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <link rel="stylesheet" href="https://use.typekit.net/ywt5coi.css">
         <script src="loadpage.js"></script>
         <script src="cursor.js"></script>
+        <script src="color.js"></script>
         <div class="cursor cursor-follower"></div>
         <div class="cursor cursor-dot"></div>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    </head>
-
-    <body>
-
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Add some basic styling to the topnav */
         
-            
-            <label class="switch">
-            <input type="checkbox" onclick="myFunction()">
-            <span class="slider round"></span>
-            </label>
+    </style>
+</head>
+<body>
 
-            <script>
-                function myFunction() {
-                var element = document.body;
-                element.classList.toggle("dark");}
-            </script>
-        
+    <label class="switch">
+        <input type="checkbox" onclick="myFunction()">
+        <span class="slider round"></span>
+    </label>
+    <!-- Create the top navigation bar -->
+    <div class="topnav">
+        <!-- Add links to the other pages using URL fragments -->
+        <a href="#home">Home<div class="cursor"></div></a>
+        <a href="#about">About<div class="cursor"></div></a>
+        <a href="#cv">CV<div class="cursor"></div></a>
+    </div>
 
-            <nav>
-                <div class="topnav">
-                  <a href="#" class="nav-link" data-page="index">Home<div class="cursor"></div></a>
-                  <a href="#" class="nav-link" data-page="about">about<div class="cursor"></div></a>
-                  <a href="#" class="nav-link" data-page="cv">cv<div class="cursor"></div></a>
-                </div>
-              </nav>
-              <div id="content"></div>
-              
+    <div id="content">
+        <!-- Content of the selected page will be loaded here -->
+    </div>
 
-    </body>
     
-    
+    <script id="home-template" type="text/template">
+        <h2>Welcome to the Home Page</h2>
+        <p>This is the home page of my website. Feel free to explore the other sections.</p>
+    </script>
+    <script id="about-template" type="text/template">
+        <h2>About Page Content</h2>
+        <p>This is the about page. Here you can learn more about me and my background.</p>
+    </script>
+    <script id="cv-template" type="text/template">
+        <h2>CV Page Content</h2>
+        <p>Here you can find my curriculum vitae (CV) detailing my education, work experience, and skills.</p>
+    </script>
+</body>
 </html>
