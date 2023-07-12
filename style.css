@@ -1,19 +1,19 @@
-:root { --size: 15px; }
-html {
-  cursor: none;
-  user-select: none;
+:root { --size: 30px; }
+
+
+body {font-family: "komet", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: white;
+  background-color: black;
+  text-decoration: none;
 }
 
-*{
-    font-family: "komet", sans-serif;
-    font-weight: 900;
-    font-style: normal;
-    color: white;
-}
+a:visited { text-decoration: none; color:black}
 
-a {
-    text-decoration: none;
-}
+
+
+
 
 .topnav {
     text-align: center;
@@ -25,11 +25,74 @@ a {
 }
 
 body {
-  
-  background: linear-gradient(
-    60deg,
-    #1a1f26 0%,
-    black 100%);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 
@@ -37,35 +100,44 @@ body {
   height: var(--size);
   width:  var(--size);
   border-radius: 50%;
-  position: fixed;
+  position: absolute;
   z-index: -1;
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
 
 .cursor.cursor-follower {
-    position: fixed;
-  background: rgb(2, 216, 116);
+  background: rgb(150, 100, 200);
   transition: top .25s, left .25s,
               width .5s, height .5s;
   transition-timing-function: ease-out;
 }
 
 .cursor.cursor-dot {
-    position: fixed;
   background: #fff;
   transition: width .25s, height .25s;
 }
 
 .cursor-follower.focus {
-  --size: 75px;
+  --size: 100px;
 }
 
 .cursor-dot.focus {
-  --size: 30;
+  --size: 0px;
 }
 
-h1 {
-  color:  #fff;
-  padding: 50px;
+.dark {
+  font-family: "komet", sans-serif;
+  font-weight: 900;
+  font-style: normal;
+  color: white;
+  background-color: black;
+  text-decoration: none;
+
+ 
 }
+
+.dark a:visited{
+  color: white;
+}
+
