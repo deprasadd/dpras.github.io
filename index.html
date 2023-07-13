@@ -50,32 +50,17 @@
         <p>This is the about page. Here you can learn more about me and my background.</p>
     </script>
     <script id="cv-template" type="text/template">
-        <section class="slider-wrapper">
-            <button class="slide-arrow" id="slide-arrow-prev">
-              &#8249;
-            </button>
-            <button class="slide-arrow" id="slide-arrow-next" onclick="nextSlide()">
-                &#8250;
-              </button>
-            <ul class="slides-container" id="slides-container">
-              <li class="slide"></li>
-              <li class="slide"></li>
-              <li class="slide"></li>
-              <li class="slide"></li>
-            </ul>
-          </section>
-          
-          <script>
-            const slideContainer = document.getElementById('slides-container');
-            const slideWidth = slideContainer.clientWidth;
-            let currentSlide = 0;
-          
-            function nextSlide() {
-              currentSlide = (currentSlide + 1) % slideContainer.children.length;
-              slideContainer.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
-            }
-          </script>
-                
+        <div class="carousel">
+            <div class="carousel__item">Content #1</div>
+            <div class="carousel__item">Content #2</div>
+            <div class="carousel__item">Content #3</div>
+            <div class="carousel__nav">
+                <span class = "carousel__button"></span>
+                <span class = "carousel__button"></span>
+                <span class = "carousel__button"></span> 
+            </div>
+        
+        
     </script>
 </body>
 </html>
