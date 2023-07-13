@@ -8,6 +8,8 @@
         <script src="loadpage.js"></script>
         <script src="cursor.js"></script>
         <script src="color.js"></script>
+        <script src="pane.js"></script>
+
         <div class="cursor cursor-follower"></div>
         <div class="cursor cursor-dot"></div>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,16 +38,44 @@
 
     
     <script id="home-template" type="text/template">
-        <h2>Welcome to the Home Page</h2>
-        <p>This is the home page of my website. Feel free to explore the other sections.</p>
+        <h1>Dhruv Prasad</h1>
+        <h2>I am interested, broadly, in studying and applying complex systems from an interdisciplinary perspective
+            in order to approach problems such as the dynamics of various state-actors 
+            on deciding whether to go to war, and the physical underpinnings of
+            the human brain on decision-making.
+        </h2>
     </script>
     <script id="about-template" type="text/template">
         <h2>About Page Content</h2>
         <p>This is the about page. Here you can learn more about me and my background.</p>
     </script>
     <script id="cv-template" type="text/template">
-        <h2>CV Page Content</h2>
-        <p>Here you can find my curriculum vitae (CV) detailing my education, work experience, and skills.</p>
+        <section class="slider-wrapper">
+            <button class="slide-arrow" id="slide-arrow-prev">
+              &#8249;
+            </button>
+            <button class="slide-arrow" id="slide-arrow-next" onclick="nextSlide()">
+                &#8250;
+              </button>
+            <ul class="slides-container" id="slides-container">
+              <li class="slide"></li>
+              <li class="slide"></li>
+              <li class="slide"></li>
+              <li class="slide"></li>
+            </ul>
+          </section>
+          
+          <script>
+            const slideContainer = document.getElementById('slides-container');
+            const slideWidth = slideContainer.clientWidth;
+            let currentSlide = 0;
+          
+            function nextSlide() {
+              currentSlide = (currentSlide + 1) % slideContainer.children.length;
+              slideContainer.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            }
+          </script>
+                
     </script>
 </body>
 </html>
